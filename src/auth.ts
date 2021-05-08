@@ -1,5 +1,17 @@
-import { Login, Match, Index, Logout } from "faunadb";
+import {
+	Login,
+	Match,
+	Index,
+	Logout,
+	Create,
+	Tokens,
+	Ref,
+	Select,
+	Get,
+	Collection,
+} from "faunadb";
 import { getClient } from ".";
+import { MatchIndex } from "./query";
 
 /**
  * User Login password
@@ -24,5 +36,28 @@ const TokenLogout = (token: string, logoutAll: boolean = false) => {
 	return getClient(token).query(Logout(logoutAll));
 };
 
+/**
+ * Create New Token using Reference to collection
+ *
+ * @param  {string} collection
+ * @param  {Mixed} value
+ */
+const AuthToken = <T>(collection: string, value: T) => {
+	return Create(Tokens(), {
+		instance: Ref(Collection(collection), value),
+	});
+};
+/**
+ * Create New Token by selecting the reference from Match
+ *
+ * @param  {string} index
+ * @param  {Mixed} value
+ */
+const AuthTokenByIndex = <T>(index: string, value: T) => {
+	return Create(Tokens(), {
+		instance: Select("ref", MatchIndex(index, value)),
+	});
+};
+
 // Export functions
-export { FaunaLogin, TokenLogout };
+export { FaunaLogin, TokenLogout, AuthToken, AuthTokenByIndex };
