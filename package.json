@@ -1,9 +1,9 @@
 {
-	"name": "@ootiq/justfaunautils",
+	"name": "@ootiq/just-faunautils",
 	"version": "0.0.1",
 	"main": "lib/index.js",
 	"license": "Unlicense",
-	"repository": "ootiq/justfaunautils",
+	"repository": "ootiq/just-faunautils",
 	"dependencies": {
 		"faunadb": "^4.2.0"
 	},
