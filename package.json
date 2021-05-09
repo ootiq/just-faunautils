@@ -1,6 +1,6 @@
 {
 	"name": "@ootiq/just-faunautils",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"main": "lib/index.js",
 	"license": "Unlicense",
 	"repository": "ootiq/just-faunautils",
@@ -19,6 +19,6 @@
 		"access": "public"
 	},
 	"files": [
-		"/lib"
+		"lib"
 	]
 }

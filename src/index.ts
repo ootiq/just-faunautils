@@ -1,4 +1,7 @@
 import { Client, query } from "faunadb";
+
+import { FaunaLogin, TokenLogout, AuthToken, AuthTokenByIndex } from "./auth";
+
 import {
 	CreateData,
 	CreateIfNotExists,
@@ -26,5 +29,9 @@ export {
 	Execute,
 	ExecuteIfNotExists,
 	ExecuteIfExists,
+	FaunaLogin,
+	TokenLogout,
+	AuthToken,
+	AuthTokenByIndex,
 };
 export type { FaunaResponseProps };
