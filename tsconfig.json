@@ -1,12 +1,13 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "es6",
 		"module": "commonjs",
 		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"declaration": true,
 		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
 		"outDir": "./lib"
 	},
 	"include": ["./src"],
