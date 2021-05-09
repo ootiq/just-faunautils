@@ -12,18 +12,18 @@ interface FaunaResponseProps<T> {
  * @param  {string} index
  * @param  {Mixed} value
  */
-const MatchIndex = <T>(index: string, value: T) => {
+function MatchIndex<T>(index: string, value: T) {
 	return Get(Match(Index(index), value));
-};
+}
 /**
  * Get data with the document's ref.id
  *
  * @param  {string} collection
  * @param  {Mixed} value
  */
-const MatchCollections = <T>(collection: string, value: T) => {
+function MatchCollections<T>(collection: string, value: T) {
 	return Get(Collection(collection), value);
-};
+}
 
 // Export functions
 export { MatchIndex, MatchCollections };

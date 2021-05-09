@@ -13,9 +13,9 @@ import {
 } from "./query";
 import type { FaunaResponseProps } from "./query/match";
 
-const getClient = (token: string) => {
+function getClient(token: string) {
 	return new Client({ secret: token });
-};
+}
 const q = query;
 
 // export functions and utils

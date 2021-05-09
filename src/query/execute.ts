@@ -6,8 +6,9 @@ import { Exists, Expr, If } from "faunadb";
  * @param  {boolean} exists
  * @param  {Expr} fql
  */
-const Execute = (ref: Expr, exists: boolean, fql: Expr) =>
+function Execute(ref: Expr, exists: boolean, fql: Expr) {
 	If(Exists(ref), exists, fql);
+}
 
 /**
  * Execute function if the reference exists.
@@ -15,7 +16,9 @@ const Execute = (ref: Expr, exists: boolean, fql: Expr) =>
  * @param  {Expr} ref
  * @param  {Expr} fql
  */
-const ExecuteIfExists = (ref: Expr, fql: Expr) => Execute(ref, true, fql);
+function ExecuteIfExists(ref: Expr, fql: Expr) {
+	Execute(ref, true, fql);
+}
 
 /**
  * Execute function if the reference does not exist.
@@ -23,7 +26,9 @@ const ExecuteIfExists = (ref: Expr, fql: Expr) => Execute(ref, true, fql);
  * @param  {Expr} ref
  * @param  {Expr} fql
  */
-const ExecuteIfNotExists = (ref: Expr, fql: Expr) => Execute(ref, false, fql);
+function ExecuteIfNotExists(ref: Expr, fql: Expr) {
+	Execute(ref, false, fql);
+}
 
 // export functions
 export { Execute, ExecuteIfExists, ExecuteIfNotExists };

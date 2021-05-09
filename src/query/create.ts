@@ -7,11 +7,11 @@ import { DataProps } from "../utils";
  * @param  {string} collection
  * @param  {DataProps} data
  */
-const CreateData = (collection: string, data: DataProps) => {
+function CreateData(collection: string, data: DataProps) {
 	return Create(Collection(collection), {
 		data: data,
 	});
-};
+}
 
 /**
  * Create Data if the reference doesn't exist.
@@ -20,9 +20,9 @@ const CreateData = (collection: string, data: DataProps) => {
  * @param  {string} collection
  * @param  {DataProps} data
  */
-const CreateIfNotExists = (ref: Expr, collection: string, data: DataProps) => {
+function CreateIfNotExists(ref: Expr, collection: string, data: DataProps) {
 	return If(Exists(ref), false, Create(Collection(collection), { data }));
-};
+}
 
 // export functions
 export { CreateData, CreateIfNotExists };

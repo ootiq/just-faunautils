@@ -19,21 +19,21 @@ import { MatchIndex } from "./query/match";
  * @param  {string} value value to match to the index
  * @param  {string} password password of the user
  */
-const FaunaLogin = (index: string, value: string, password: string) => {
+function FaunaLogin(index: string, value: string, password: string) {
 	return Login(Match(Index(index), value), {
 		password: password,
 	});
-};
+}
 
 /**
  * Logout token
  *
  * @param  {string} token the token to logout
- * @param  {boolean=false} logoutAll logout all current tokens related
+ * @param  {booleanfalse} logoutAll logout all current tokens related
  */
-const TokenLogout = (token: string, logoutAll: boolean = false) => {
+function TokenLogout(token: string, logoutAll: boolean = false) {
 	return getClient(token).query(Logout(logoutAll));
-};
+}
 
 /**
  * Create New Token using Reference to collection
@@ -41,22 +41,22 @@ const TokenLogout = (token: string, logoutAll: boolean = false) => {
  * @param  {string} collection
  * @param  {Mixed} value
  */
-const AuthToken = <T>(collection: string, value: T) => {
+function AuthToken<T>(collection: string, value: T) {
 	return Create(Tokens(), {
 		instance: Ref(Collection(collection), value),
 	});
-};
+}
 /**
  * Create New Token by selecting the reference from Match
  *
  * @param  {string} index
  * @param  {Mixed} value
  */
-const AuthTokenByIndex = <T>(index: string, value: T) => {
+function AuthTokenByIndex<T>(index: string, value: T) {
 	return Create(Tokens(), {
 		instance: Select("ref", MatchIndex(index, value)),
 	});
-};
+}
 
 // Export functions
 export { FaunaLogin, TokenLogout, AuthToken, AuthTokenByIndex };
