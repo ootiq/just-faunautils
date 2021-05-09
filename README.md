@@ -2,6 +2,8 @@
 
 Just helpers and utilities for the `FaunaDB Javascript Driver`
 
+I am new to writing `Typescript` libraries and would like to learn more for best practices.
+
 ## Install
 
 ```

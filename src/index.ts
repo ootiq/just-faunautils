@@ -1,4 +1,13 @@
 import { Client, query } from "faunadb";
+import {
+	CreateData,
+	CreateIfNotExists,
+	MatchIndex,
+	MatchCollections,
+	Execute,
+	ExecuteIfNotExists,
+	ExecuteIfExists,
+} from "./query";
 import type { FaunaResponseProps } from "./query/match";
 
 const getClient = (token: string) => {
@@ -6,6 +15,16 @@ const getClient = (token: string) => {
 };
 const q = query;
 
-// export utils
-export { getClient, q };
+// export functions and utils
+export {
+	getClient,
+	q,
+	CreateData,
+	CreateIfNotExists,
+	MatchIndex,
+	MatchCollections,
+	Execute,
+	ExecuteIfNotExists,
+	ExecuteIfExists,
+};
 export type { FaunaResponseProps };

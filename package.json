@@ -4,7 +4,7 @@
 	"main": "lib/index.js",
 	"license": "Unlicense",
 	"repository": "ootiq/just-faunautils",
-	"dependencies": {
+	"peerDependencies": {
 		"faunadb": "^4.2.0"
 	},
 	"devDependencies": {
@@ -19,6 +19,6 @@
 		"access": "public"
 	},
 	"files": [
-		"lib/"
+		"/lib"
 	]
 }
