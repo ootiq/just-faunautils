@@ -18,9 +18,13 @@ yarn add @ootiq/justfaunautils
 -   **auth/TokenLogout**
 -   **auth/AuthToken**
 -   **auth/AuthTokenByIndex**
--   **query/MatchIndex**
--   **query/MatchCollections**
--   **query/CreateData**
+-   **query/match/MatchIndex**
+-   **query/match/MatchCollections**
+-   **query/create/CreateData**
+-   **query/create/CreateIfNotExists**
+-   **query/execute/Execute**
+-   **query/execute/ExecuteIfExists**
+-   **query/execute/ExecuteIfNotExists**
 
 ### Types
 

@@ -7,11 +7,10 @@ import {
 	Tokens,
 	Ref,
 	Select,
-	Get,
 	Collection,
 } from "faunadb";
 import { getClient } from ".";
-import { MatchIndex } from "./query";
+import { MatchIndex } from "./query/match";
 
 /**
  * User Login password

@@ -12,7 +12,8 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"build:check": "tsc --noEmit"
+		"build:check": "tsc --noEmit",
+		"prepublishOnly": "yarn build"
 	},
 	"publishConfig": {
 		"access": "public"

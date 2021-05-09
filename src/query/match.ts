@@ -1,5 +1,4 @@
 import { Get, Match, Index, Collection, Create } from "faunadb";
-import { DataProps } from "./utils";
 
 interface FaunaResponseProps<T> {
 	ref: object;
@@ -26,20 +25,8 @@ const MatchCollections = <T>(collection: string, value: T) => {
 	return Get(Collection(collection), value);
 };
 
-/**
- * Create a new data.
- *
- * @param  {string} collection
- * @param  {DataProps} data
- */
-const CreateData = (collection: string, data: DataProps) => {
-	return Create(Collection(collection), {
-		data: data,
-	});
-};
-
 // Export functions
-export { MatchIndex, MatchCollections, CreateData };
+export { MatchIndex, MatchCollections };
 
 // Export types
 export type { FaunaResponseProps };

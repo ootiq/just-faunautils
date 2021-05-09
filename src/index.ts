@@ -1,5 +1,5 @@
 import { Client, query } from "faunadb";
-import type { FaunaResponseProps } from "./query";
+import type { FaunaResponseProps } from "./query/match";
 
 const getClient = (token: string) => {
 	return new Client({ secret: token });
