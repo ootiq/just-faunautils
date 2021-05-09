@@ -7,7 +7,7 @@ import { Exists, Expr, If } from "faunadb";
  * @param  {Expr} fql
  */
 function Execute(ref: Expr, exists: boolean, fql: Expr) {
-	If(Exists(ref), exists, fql);
+	return If(Exists(ref), exists, fql);
 }
 
 /**
@@ -17,7 +17,7 @@ function Execute(ref: Expr, exists: boolean, fql: Expr) {
  * @param  {Expr} fql
  */
 function ExecuteIfExists(ref: Expr, fql: Expr) {
-	Execute(ref, true, fql);
+	return Execute(ref, true, fql);
 }
 
 /**
@@ -27,7 +27,7 @@ function ExecuteIfExists(ref: Expr, fql: Expr) {
  * @param  {Expr} fql
  */
 function ExecuteIfNotExists(ref: Expr, fql: Expr) {
-	Execute(ref, false, fql);
+	return Execute(ref, false, fql);
 }
 
 // export functions
