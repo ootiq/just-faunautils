@@ -12,6 +12,15 @@ import {
 import { getClient } from ".";
 import { MatchIndex } from "./query/match";
 
+// AuthReponseProps is the response from the query when trying to login or creating a token. (unsure)
+export interface AuthReponseProps {
+	ref: object;
+	ts: number;
+	instance: object;
+	ttl?: number;
+	secret: string;
+}
+
 /**
  * User Login password
  *
@@ -31,8 +40,8 @@ function FaunaLogin(index: string, value: string, password: string) {
  * @param  {string} token the token to logout
  * @param  {booleanfalse} logoutAll logout all current tokens related
  */
-function TokenLogout(token: string, logoutAll: boolean = false) {
-	return getClient(token).query(Logout(logoutAll));
+async function TokenLogout(token: string, logoutAll: boolean = false) {
+	return await getClient(token).query(Logout(logoutAll));
 }
 
 /**
